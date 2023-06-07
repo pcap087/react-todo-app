@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #0e8076, #30d46f);
+    padding: 10px;
+}
+
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background-color: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+}
+
+.todo-app h3 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    
+}
+
+.todo-app h2 img {
+    width: 40px;
+    margin-left: 10px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 16px 30px;
+    background: #04AA6D;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ .icon-check {
+    position: absolute;
+    height: 31px;
+    width: 31px;
+    background-image: url(images/checked-two.png);
+    background-size: cover;
+    background-position: center;
+    top: 5px;
+    left: 8px;
+} 
+
+.icon-uncheck {
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 6px;
+    left: 10px;
+} 
+
+.icon-deleted {
+    position: absolute;
+    height: 31px;
+    width: 31px;
+    background-image: url(images/delete.png);
+    background-size: cover;
+    background-position: center;
+    top: 5px;
+    left: 8px;
+} 
+
+.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ 
+
+
+
+ .TodoItem{
+    background-color:#fafafa;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:24px;
+    box-shadow:0 5px 50px rgba(32,35,41,.15)
+}
+    
+.TodoItem-p{
+    margin:24px 0 24px 24px;
+    width:calc(100% - 120px);
+    font-size:18px;
+    line-height:24px;
+    font-weight:400
+}
+
+.TodoItem-p--complete{
+    text-decoration:line-through
+}
+
+.Icon{
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:48px;
+    width:48px;
+    font-size:24px;
+    font-weight:700
+}
+
+.Icon-check{
+    position:absolute;
+    left:12px
+}
+
+.Icon-check--active{
+    color:#4caf50
+}
+
+.Icon-delete{
+    position:absolute;
+    top:-24px;
+    right:0
+}
+
+.Icon-delete:hover{
+    color:red
+}
