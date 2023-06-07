@@ -1,3 +1,4 @@
+import React from 'react';
 import { TodoCounter } from './TodoCounter';
 import { TodoSearch } from './TodoSearch';
 import { TodoList } from './TodoList';
@@ -11,12 +12,25 @@ const defaultTareas = [
 ]
 
 function App() {
+    const [tareas, setTareas] = React.useState(defaultTareas);
+
+    const [searchValue, setSearchValue] = React.useState('');
+
+    const completedTodos = tareas.filter(todo => !!todo.completed).length; 
+    const totalTodos = 0;
+
     return (
         <div className="container">
             <div className="todo-app">
-                <TodoCounter completed={16} total={25}/>
+                <TodoCounter 
+                    completed={completedTodos} 
+                    total={25}
+                />
                 <div className="row">
-                    <TodoSearch/> 
+                    <TodoSearch
+                        searchValue={searchValue} 
+                        setSearchValue={setSearchValue}
+                    /> 
                     <CreateTodoButton/> 
                 </div>
                 <TodoList>

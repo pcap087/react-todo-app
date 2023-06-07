@@ -1,6 +1,16 @@
 function CreateTodoButton() {
+    //traditional function
+    // function clickButton(){
+    //     console.log('click button');
+    // }
+
+    //arrow function
+    let clickButton = () => {
+        console.log('click button');
+    };
+
     return (
-        <button>Agregar</button>
+        <button onClick={clickButton}>Agregar</button>
     )
 }
 
