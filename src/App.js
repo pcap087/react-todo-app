@@ -6,25 +6,34 @@ import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
 
 const defaultTareas = [
-    {texto: 'Tarea 1', completed: true},
-    {texto: 'Tarea 2', completed: false},
-    {texto: 'Tarea 3', completed: false}
+    {texto: 'Lavar el auto', completed: false},
+    {texto: 'Estudiar Ingles', completed: false},
+    {texto: 'Curso de Java', completed: false},
+    {texto: 'Pasear al Perro', completed: false}
 ]
 
 function App() {
-    const [tareas, setTareas] = React.useState(defaultTareas);
-
+    //estado para el buscador de tareas
     const [searchValue, setSearchValue] = React.useState('');
 
-    const completedTodos = tareas.filter(todo => !!todo.completed).length; 
-    const totalTodos = 0;
+    //estado para la cantidad de tareas
+    const [tareas, setTareas] = React.useState(defaultTareas);
+
+    //cantidad de tareas completadas
+    const completedTodos = tareas.filter(item => item.completed === true).length;
+
+    //cantidad de tareas del array
+    const totalTodos = defaultTareas.length;
+
+    //filtar los datos en el buscador
+    const searchTareas = defaultTareas.filter(tarea => tarea.texto.toLowerCase().includes(searchValue.toLowerCase()));
 
     return (
         <div className="container">
             <div className="todo-app">
                 <TodoCounter 
                     completed={completedTodos} 
-                    total={25}
+                    total={totalTodos}
                 />
                 <div className="row">
                     <TodoSearch
@@ -34,10 +43,12 @@ function App() {
                     <CreateTodoButton/> 
                 </div>
                 <TodoList>
-                    {defaultTareas.map(todo => (
-                        <TodoItem key={todo.texto} 
+                    {searchTareas.map(todo => (
+                        <TodoItem 
+                            key={todo.texto} 
                             text={todo.texto}
                             completed={todo.completed}
+                            completedTodos = {completedTodos}
                         />))
                     }
                 </TodoList>

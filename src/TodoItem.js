@@ -1,15 +1,24 @@
-//import './css/TodoItem.css';
+function TodoItem({text, completed, completedTodos}) {
+    
+    const checkTodo = () => {
+       console.log(text); 
+    }
 
-function TodoItem(props) {
+
     return(
         <li>
-            <span className={`${props.completed == true ? "icon-check" : "icon-uncheck"}`}></span>
-
-            <p className={`${props.completed && "checked"}`}>{props.text}</p>
-
-            <span className=""></span>
+            <button type="button" 
+                className="icon-uncheck"
+                onClick={checkTodo}
+            />
+    
+            <p>{text}</p>
+   
+            <button type="button" 
+                className="icon-deleted"
+            />
+ 
         </li>
-     
     );
 }
 
@@ -17,3 +26,7 @@ function TodoItem(props) {
 export { TodoItem };
 
 //{`unchecked ${props.completed} && "checked"`}
+
+//className={`${props.completed == true ? "icon-check" : "icon-uncheck"}`}
+
+//<p className={`${props.completed && "checked"}`}>{props.text}</p>

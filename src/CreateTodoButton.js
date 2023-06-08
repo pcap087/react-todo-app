@@ -10,7 +10,7 @@ function CreateTodoButton() {
     };
 
     return (
-        <button onClick={clickButton}>Agregar</button>
+        <button className="button-add" onClick={clickButton}>Agregar</button>
     )
 }
 
