@@ -64,7 +64,7 @@ function App() {
     //     setTareas(newTodo);
     // }
     const deleteTodo = (texto) => {
-        const newTodo = [...tareas]; 
+        
         const updatedTodos = newTodo.filter((todo) => todo.texto !== texto);
         setTareas(updatedTodos);
     }
