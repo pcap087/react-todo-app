@@ -1,22 +1,18 @@
-function TodoItem({text, completed, completedTodos}) {
-    
-    const checkTodo = () => {
-       console.log(text); 
-    }
-
+function TodoItem(props) {
 
     return(
         <li>
-            <button type="button" 
-                className="icon-uncheck"
-                onClick={checkTodo}
+            <button
+                className={`${props.completed === true ? "icon-check" : "icon-uncheck"}`}
+                onClick={props.onComplete}
             />
     
-            <p>{text}</p>
+            <p className={`${props.completed && "checked"}`}>{props.text}</p>
    
-            <button type="button" 
+            <button
                 className="icon-deleted"
-            />
+                onClick={props.onDelete}>
+            </button>
  
         </li>
     );

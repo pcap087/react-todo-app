@@ -14,7 +14,7 @@
 
 .todo-app{
     width: 100%;
-    max-width: 540px;
+    max-width: 500px;
     background-color: #fff;
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
@@ -45,35 +45,38 @@
     justify-content: space-between;
     background: #edeef0;
     border-radius: 30px;
-    padding-left: 20px;
+    padding-left: 10px;
     margin-top: 15px;
     margin-bottom: 25px;
 }
 
 input{
-    flex: 1;
+    flex: 0;
     border: none;
     outline: none;
     background: transparent;
     padding: 10px;
-    font-weight: 14px;
+    font-size: 14px;
 }
 
 .button-add{
     border: none;
     outline: none;
-    padding: 16px 30px;
+    padding: 14px 25px;
     background: #04AA6D;
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     border-radius: 30px;
 }
 
 ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     list-style: none;
     font-size: 17px;
-    padding: 12px 8px 12px 50px;
+    padding: 10px 8px 12px 50px;
     user-select: none;
     position: relative;
 }
@@ -81,6 +84,7 @@ ul li{
  .icon-check {
     border: none;
     position: absolute;
+    background: transparent;
     height: 31px;
     width: 31px;
     background-image: url(images/checked-two.png);
@@ -103,18 +107,18 @@ ul li{
     left: 10px;
 } 
 
+
 .icon-deleted {
-    cursor: pointer;
     border: none;
-    background: transparent;
     position: absolute;
-    height: 28px;
-    width: 28px;
+    background: transparent;
+    height: 26px;
+    width: 26px;
     background-image: url(images/delete.png);
     background-size: cover;
     background-position: center;
-    top: 8px;
-    left: 430px;
+    top: 6px;
+    right: 20px;
 } 
 
 .checked{
