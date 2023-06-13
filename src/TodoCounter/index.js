@@ -1,5 +1,5 @@
 
-import icon from './images/icon.png';
+import icon from '../images/icon.png';
 
 function TodoCounter({total, completed}) {
 

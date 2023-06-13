@@ -1,39 +1,7 @@
 import React from 'react';
-import { TodoCounter } from './TodoCounter';
-import { TodoSearch } from './TodoSearch';
-import { TodoList } from './TodoList';
-import { TodoItem } from './TodoItem';
-import { CreateTodoButton } from './CreateTodoButton/';
-
-// const defaultTareas = [
-//     {texto: 'Lavar el auto', completed: false},
-//     {texto: 'Estudiar Ingles', completed: false},
-//     {texto: 'Curso de Java', completed: false},
-//     {texto: 'Pasear al Perro', completed: false}
-// ];
-// localStorage.setItem('TODOS_V1', JSON.stringify(defaultTareas));
-
-function useLocalStorage(itemName, initialValue){
-
-    const localStorageItem = localStorage.getItem(itemName);
-    let parsedItem;
-
-    if(!localStorageItem){
-        localStorage.setItem(itemName, JSON.stringify(initialValue));
-        parsedItem = [];
-    }else {
-        parsedItem = JSON.parse(localStorageItem);
-    }
-
-    const [item, setItem] = React.useState(parsedItem);
-
-    const saveItem = (newItem) => {
-        localStorage.setItem(itemName, JSON.stringify(newItem));
-        setItem(newItem);
-    };
-
-    return [item, saveItem];
-};
+import { AppUI } from './AppUI/AppUI.js';
+// custom hooks
+import { useLocalStorage } from './hooks/useLocalStorage'; 
 
 function App() {
 
@@ -87,38 +55,21 @@ function App() {
         }
         //enviamos al estado actualizador las anteriores + la tarea nueva
         saveTodos([...tareas, newTarea]);
+        //actualizamos el estado del input
+        setSearchValue('');
     };
-
     
     return (
-        <>
-            <div className="container">
-                <div className="todo-app">
-                    <TodoCounter 
-                        completed={completedTodos} 
-                        total={totalTodos}
-                    />
-                    <div className="row">
-                        <TodoSearch
-                            searchValue={searchValue} 
-                            setSearchValue={setSearchValue}
-                        /> 
-                        <CreateTodoButton onInsert={() => insertarTarea(searchValue)} /> 
-                    </div>
-                    <TodoList>
-                        {searchTareas.map(todo => (
-                            <TodoItem 
-                                key={todo.texto} 
-                                text={todo.texto}
-                                completed={todo.completed}
-                                onComplete={() => completeTodo(todo.texto)}
-                                onDelete={() => deleteTodo(todo.texto)}
-                            />))
-                        }
-                    </TodoList>
-                </div>
-            </div>
-        </>
+       <AppUI 
+            completedTodos={completedTodos}
+            totalTodos={totalTodos}
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+            searchTareas={searchTareas}
+            completeTodo={completeTodo}
+            deleteTodo={deleteTodo}
+            insertarTarea={insertarTarea}
+        />
     );
 }
 

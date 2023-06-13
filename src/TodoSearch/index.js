@@ -1,8 +1,6 @@
 import React from 'react';
 
-function TodoSearch({
-    searchValue, 
-    setSearchValue}){
+function TodoSearch({searchValue, setSearchValue}){
     return (
     <>
         <input type="text" 

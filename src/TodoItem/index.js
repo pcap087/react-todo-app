@@ -1,6 +1,6 @@
 function TodoItem({text, completed, onComplete, onDelete}) {
     return(
-        <li>
+        <li className="animated fadeIn">
             {/* boton completar */}
             <button type="button" onClick={onComplete}
                 className={`${completed === true ? "icon-check" : "icon-uncheck"}`}
