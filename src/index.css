@@ -71,12 +71,10 @@ input{
 }
 
 ul li{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    
     list-style: none;
     font-size: 17px;
-    padding: 10px 8px 12px 50px;
+    padding: 3px 3px 3px 40px;
     user-select: none;
     position: relative;
 }
@@ -107,6 +105,18 @@ ul li{
     left: 10px;
 } 
 
+.icon-edit {
+    border: none;
+    position: absolute;
+    background: transparent;
+    height: 26px;
+    width: 26px;
+    background-image: url(images/pencil.png);
+    background-size: cover;
+    background-position: center;
+    top: 6px;
+    right: 50px;
+} 
 
 .icon-deleted {
     border: none;

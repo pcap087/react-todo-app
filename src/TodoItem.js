@@ -1,19 +1,23 @@
-function TodoItem(props) {
-
+function TodoItem({text, completed, onComplete, onDelete}) {
     return(
         <li>
-            <button
-                className={`${props.completed === true ? "icon-check" : "icon-uncheck"}`}
-                onClick={props.onComplete}
+            {/* boton completar */}
+            <button type="button" onClick={onComplete}
+                className={`${completed === true ? "icon-check" : "icon-uncheck"}`}
             />
-    
-            <p className={`${props.completed && "checked"}`}>{props.text}</p>
-   
-            <button
-                className="icon-deleted"
-                onClick={props.onDelete}>
-            </button>
- 
+
+            {/* campo texto */}
+            <input type="text" 
+                className={`${completed && "checked"}`}
+                value={text}
+                readOnly
+            />
+
+            {/* boton de editar */}
+            <button type="button" className="icon-edit" onClick={onDelete}/>
+
+            {/* boton de eliminar */}
+            <button type="button" className="icon-deleted" onClick={onDelete}/>
         </li>
     );
 }
