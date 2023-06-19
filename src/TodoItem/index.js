@@ -14,7 +14,7 @@ function TodoItem({text, completed, onComplete, onDelete}) {
             />
 
             {/* boton de editar */}
-            <button type="button" className="icon-edit" onClick={onDelete}/>
+            {/* <button type="button" className="icon-edit" onClick={onDelete}/> */}
 
             {/* boton de eliminar */}
             <button type="button" className="icon-deleted" onClick={onDelete}/>

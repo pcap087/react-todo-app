@@ -3,6 +3,7 @@ import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
+import { TodoFooter } from '../TodoFooter'
 
 function AppUI({completedTodos, totalTodos, searchValue, setSearchValue, searchTareas, completeTodo, deleteTodo, insertarTarea}){
     return (
@@ -31,6 +32,7 @@ function AppUI({completedTodos, totalTodos, searchValue, setSearchValue, searchT
                             />))
                         }
                     </TodoList>
+                    <TodoFooter/>
                 </div>
             </div>
         </>

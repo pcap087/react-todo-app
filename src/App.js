@@ -58,6 +58,8 @@ function App() {
         //actualizamos el estado del input
         setSearchValue('');
     };
+
+
     
     return (
        <AppUI 
