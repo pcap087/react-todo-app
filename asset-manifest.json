@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pcap087/react-todo-app/static/css/main.7a0b1772.css",
+    "main.js": "/pcap087/react-todo-app/static/js/main.63ac26f3.js",
+    "index.html": "/pcap087/react-todo-app/index.html",
+    "main.7a0b1772.css.map": "/pcap087/react-todo-app/static/css/main.7a0b1772.css.map",
+    "main.63ac26f3.js.map": "/pcap087/react-todo-app/static/js/main.63ac26f3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7a0b1772.css",
+    "static/js/main.63ac26f3.js"
+  ]
+}
